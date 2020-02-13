@@ -14,9 +14,11 @@ function GetAllBooks() {
 }
 function GetBookById(id) {
     var allBooks = GetAllBooks();
+    //Arrow function or lambda function
     return allBooks.filter(function (book) { return book.id === id; })[0];
 }
 var bioBook = GetBookById(BookType.Biography);
 var allBooks = GetAllBooks();
+//Arrow function or lambda function
 allBooks.forEach(function (val, idx, arr) { return console.log(++idx + " - " + val.title); });
 //# sourceMappingURL=functions.js.map

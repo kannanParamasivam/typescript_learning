@@ -1,21 +1,18 @@
-var BookType;
-(function (BookType) {
-    BookType[BookType["Scifi"] = 0] = "Scifi";
-    BookType[BookType["Biography"] = 1] = "Biography";
-    BookType[BookType["Fiction"] = 2] = "Fiction";
-})(BookType || (BookType = {}));
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var enums_1 = require("./enums");
 function GetAllBooks() {
     var books = [
-        { title: 'TypeScript For Bieginners', author: 'Kannan', type: BookType.Biography, available: true },
-        { title: 'Learn Micro Services', author: 'Scott', type: BookType.Fiction, available: false },
-        { title: 'AWS Advanced', author: 'James', type: BookType.Scifi, available: true }
+        { id: 1, title: 'TypeScript For Bieginners', author: 'Kannan', bookType: enums_1.BookType.Biography, available: true },
+        { id: 2, title: 'Learn Micro Services', author: 'Scott', bookType: enums_1.BookType.Fiction, available: false },
+        { id: 3, title: 'AWS Advanced', author: 'James', bookType: enums_1.BookType.Scifi, available: true }
     ];
     return books;
 }
 function LogFirstAvailable(books) {
     var numberOfBooks = books.length;
     var firstAvailable = '';
-    var firstAvailableType = BookType.Biography;
+    var firstAvailableType = enums_1.BookType.Biography;
     for (var _i = 0, books_1 = books; _i < books_1.length; _i++) {
         var book = books_1[_i];
         if (book.available) {
@@ -29,6 +26,6 @@ function LogFirstAvailable(books) {
     console.log('First Available Type: ' + firstAvailableType);
 }
 var allBBooks = GetAllBooks();
-allBBooks.push({ title: 'python', author: 'Marc', type: BookType.Biography, available: true });
+allBBooks.push({ title: 'python', author: 'Marc', type: enums_1.BookType.Biography, available: true });
 LogFirstAvailable(allBBooks);
 //# sourceMappingURL=app.js.map

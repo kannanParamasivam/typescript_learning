@@ -1,4 +1,4 @@
-enum BookType { Scifi, Biography, Fiction }
+import { BookType } from './enums';
 
 
 function GetAllBooks() {

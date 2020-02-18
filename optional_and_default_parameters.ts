@@ -1,3 +1,5 @@
+import { BookType } from './enums';
+
 /**
  * js all parameters are options
  * ts all parameters are mandatory by default
@@ -25,8 +27,6 @@ function CreateCustomer(name: string, age?: number, city?: string): void {
 CreateCustomer('Daniel');
 CreateCustomer('Daniel', 23)
 CreateCustomer('Daniel', 23, 'Chicago')
-
-enum BookType { Scifi, Biography, Fiction }
 
 
 function GetAllBooks() {

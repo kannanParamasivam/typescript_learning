@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var enums_1 = require("./enums");
 /**
  * js all parameters are options
  * ts all parameters are mandatory by default
@@ -20,18 +23,12 @@ function CreateCustomer(name, age, city) {
 CreateCustomer('Daniel');
 CreateCustomer('Daniel', 23);
 CreateCustomer('Daniel', 23, 'Chicago');
-var BookType;
-(function (BookType) {
-    BookType[BookType["Scifi"] = 0] = "Scifi";
-    BookType[BookType["Biography"] = 1] = "Biography";
-    BookType[BookType["Fiction"] = 2] = "Fiction";
-})(BookType || (BookType = {}));
 function GetAllBooks() {
     var books = [
-        { title: 'TypeScript For Bieginners', author: 'Kannan', type: BookType.Biography, available: true },
-        { title: 'Learn Micro Services', author: 'Scott', type: BookType.Fiction, available: false },
-        { title: 'AWS Advanced', author: 'James', type: BookType.Scifi, available: true },
-        { title: 'Spring Boot', author: 'Kousik', type: BookType.Biography, available: false }
+        { title: 'TypeScript For Bieginners', author: 'Kannan', type: enums_1.BookType.Biography, available: true },
+        { title: 'Learn Micro Services', author: 'Scott', type: enums_1.BookType.Fiction, available: false },
+        { title: 'AWS Advanced', author: 'James', type: enums_1.BookType.Scifi, available: true },
+        { title: 'Spring Boot', author: 'Kousik', type: enums_1.BookType.Biography, available: false }
     ];
     return books;
 }
@@ -44,6 +41,6 @@ function LogBooks(msg, books) {
     });
 }
 LogBooks('All books list');
-var bioBooks = GetAllBooks().filter(function (book) { return book.type === BookType.Biography; });
+var bioBooks = GetAllBooks().filter(function (book) { return book.type === enums_1.BookType.Biography; });
 LogBooks('Bio Books', bioBooks);
 //# sourceMappingURL=optional_and_default_parameters.js.map

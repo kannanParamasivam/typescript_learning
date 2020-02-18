@@ -1,26 +1,30 @@
-enum BookType { Scifi, Biography, Fiction }
+import { BookType } from './enums';
+import { Book } from './interfaces';
 
-
-function GetAllBooks() {
-    let books = [
-        { title: 'TypeScript For Bieginners', author: 'Kannan', type: BookType.Biography, available: true },
-        { title: 'Learn Micro Services', author: 'Scott', type: BookType.Fiction, available: false },
-        { title: 'AWS Advanced', author: 'James', type: BookType.Scifi, available: true }
+function GetAllBooks()
+{
+    let books: Book[] = [
+        { id: 1, title: 'TypeScript For Bieginners', author: 'Kannan', bookType: BookType.Biography, available: true },
+        { id: 2, title: 'Learn Micro Services', author: 'Scott', bookType: BookType.Fiction, available: false },
+        { id: 3, title: 'AWS Advanced', author: 'James', bookType: BookType.Scifi, available: true }
     ];
 
     return books;
 }
 
 
-function LogFirstAvailable(books: any): void {
+function LogFirstAvailable(books: any): void
+{
 
     let numberOfBooks: number = books.length;
     let firstAvailable: string = '';
     let firstAvailableType: BookType = BookType.Biography;
 
-    for (let book of books) {
+    for (let book of books)
+    {
 
-        if (book.available) {
+        if (book.available)
+        {
             firstAvailable = book.title;
             firstAvailableType = book.type;
             break

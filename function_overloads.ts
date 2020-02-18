@@ -1,18 +1,19 @@
-enum BookType { Scifi, Biography, Fiction }
+import { BookType } from './enums';
+import { Book } from './interfaces'
 
 
 function GetAllBooks()
 {
-    let books = [
-        { id: 1, title: 'TypeScript For Bieginners', author: 'Kannan', type: BookType.Biography, available: true },
-        { id: 2, title: 'Learn Micro Services', author: 'Scott', type: BookType.Fiction, available: false },
-        { id: 3, title: 'AWS Advanced', author: 'James', type: BookType.Biography, available: true }
+    let books:Book[] = [
+        { id: 1, title: 'TypeScript For Bieginners', author: 'Kannan', bookType: BookType.Biography, available: true },
+        { id: 2, title: 'Learn Micro Services', author: 'Scott', bookType: BookType.Fiction, available: false },
+        { id: 3, title: 'AWS Advanced', author: 'James', bookType: BookType.Biography, available: true }
     ];
 
     return books;
 }
 
-
+//Following function has two overloads
 // Function overload
 // Declare the targeted signatures
 function GetTitles(author: string): string[];
